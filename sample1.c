@@ -1,8 +1,13 @@
-#include<stdio.h> 
+#include<stdio.h>
 
 int main()
 {
- int fahr = 100;
+    int c;
 
- printf("%4d\t%6.1f\n", fahr, (5.0/9.0)*(fahr - 32.0));
+    while((c = getchar()) != EOF)
+        if(c >= 'A' && c <= 'Z')
+            putchar(c - 'A' + 'a');
+        else
+            putchar(c);
+    
 }

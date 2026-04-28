@@ -2,9 +2,20 @@
 
 int main()
 {
- int fahr = 100.0;
+    int c,nwhite = 0,nother = 0,ndigit = 0,alpha = 0;
 
- scanf("%d",&fahr);
+    while((c = getchar()) != EOF){
+        if(c>='0' && c<='9'){
+            ndigit++;
+        }else if(c==' ' || c =='\n' || c =='\t'){
+            nwhite++;
+        }else if(c>='a' && c>='z' || c<='A'&& c<='z'){
+            alpha++;
+        }
+        else{
+            nother++;
+        }
+    }
 
- printf("fahr:%d\t celsius:%6.2f\n", fahr, (5.0/9.0) * fahr - 32.0);
+    printf("digit = %d,white scape = %d, other = %d\n",ndigit,nwhite,nother);
 }
